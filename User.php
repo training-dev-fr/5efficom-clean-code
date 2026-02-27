@@ -19,8 +19,6 @@ class User
         return true;
     }
 
-
-
     public function updateUser($db)
     {
         $db->save($this);
@@ -31,7 +29,7 @@ class User
         return $this->firstName = $newFirstName;
     } 
 
-        public function getFullName()
+    public function getFullName()
     {
         return "$this->firstName $this->lastName";
     } 
