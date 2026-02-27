@@ -16,4 +16,4 @@ jobs:
       - name: Lint php
         uses: firehed/lint-php-action@v1
         with:
-          php-version: "8.2"
+          php-version: "8.2" 
