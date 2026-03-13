@@ -1,3 +1,5 @@
+import FormFactory from "./FormFactory.js";
+
 const formHTML = document.querySelector('.form');
 
 async function loadData(){
@@ -6,8 +8,9 @@ async function loadData(){
     return data;
 }
 
-function showForm(data){
-    
+function showForm(element){
+    let item = new FormFactory(element)
+    formHTML.innerHTML += item.display();
 }
 
 
