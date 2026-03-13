@@ -1,4 +1,5 @@
 import FormFactory from "./FormFactory.js";
+const formFactory = new FormFactory();
 
 const formHTML = document.querySelector('.form');
 
@@ -8,16 +9,17 @@ async function loadData(){
     return data;
 }
 
-function showForm(element){
-    let item = new FormFactory(element)
-    formHTML.innerHTML += item.display();
+async function showForm(element){
+    let item = await formFactory.create(element)
+    formHTML.appendChild(item.display());
+    item.onChange(value => console.log(value));
 }
 
 
 async function init(){
     const data = await loadData();
     for(let element of data){
-        showForm(element);
+        await showForm(element);
     }
 }
 

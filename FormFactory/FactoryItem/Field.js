@@ -4,9 +4,25 @@ export default class Field {
     }
 
     display(children) {
-        return `<div class="form-group">
-                    <label for="${this.id}">${this.label}</label>
-                    ${children}
-                </div>`
+        let formGroup = document.createElement('div');
+        formGroup.classList.add('form-group');
+
+        if(this.label){
+            let label = document.createElement('label');
+            if(this.id){
+                label.setAttribute('for',this.id)
+            }
+            label.innerHTML= this.label;
+            formGroup.appendChild(label)
+        }
+
+        if(this.id){
+            children.setAttribute('id',this.id);
+        }
+        if(this.name){
+            children.setAttribute('name',this.name);
+        }
+        formGroup.appendChild(children);
+        return formGroup;
     }
 }

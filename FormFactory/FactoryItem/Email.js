@@ -6,6 +6,12 @@ export default class Email extends Field{
     }
 
     display(){
-        return super.display(`<input type="email" id="${this.id}" name="${this.name}">`);
+        this.text = document.createElement('input');
+        this.text.type = "email";
+        return super.display(this.text);
+    }
+
+        onChange(callback){
+        this.text.addEventListener('keyup',() => callback(this.text.value));
     }
 }
