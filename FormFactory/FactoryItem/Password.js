@@ -1,12 +1,11 @@
-export default class Password{
-    constructor(item){
-        this.label = item.label;
+import Field from "./Field.js";
+
+export default class Password extends Field{
+    constructor(item) {
+        super(item);
     }
 
-    display(){
-        return `<div class="form-group">
-            <label>${this.label}</label>
-            <input type="password">
-         </div>`;
+    display() {
+        return super.display(`<input type="password" id="${this.id}" name="${this.name}">`);
     }
 }

@@ -1,12 +1,11 @@
-export default class Text{
-    constructor(item){
-        this.label = item.label;
+import Field from "./Field.js";
+
+export default class Text extends Field{
+    constructor(item) {
+        super(item);
     }
 
-    display(){
-        return `<div class="form-group">
-            <label>${this.label}</label>
-            <input type="text">
-         </div>`;
+    display() {
+        return super.display(`<input type="text" id="${this.id}" name="${this.name}">`);
     }
 }

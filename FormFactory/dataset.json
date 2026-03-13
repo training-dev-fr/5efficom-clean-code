@@ -16,5 +16,17 @@
         "label": "E-mail de récupération",
         "id": "recoveryEmail",
         "name": "recoveryEmail"
+    },
+    {
+        "type": "select",
+        "label": "Pays",
+        "id": "country",
+        "name": "country",
+        "options": {
+            "fr": "France",
+            "be": "Belgique",
+            "ch": "Suisse",
+            "es": "Espagne"
+        }
     }
 ]

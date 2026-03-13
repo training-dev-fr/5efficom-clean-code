@@ -1,12 +1,11 @@
-export default class Email{
+import Field from "./Field.js";
+
+export default class Email extends Field{
     constructor(item){
-        this.label = item.label;
+        super(item);
     }
 
     display(){
-        return `<div class="form-group">
-            <label>${this.label}</label>
-            <input type="email">
-         </div>`;
+        return super.display(`<input type="email" id="${this.id}" name="${this.name}">`);
     }
 }
