@@ -1,13 +1,13 @@
 class Multiton{
     constructor(){
-        if(!Multiton.instance){
-            Multiton.instance = [];
+        if(!Multiton.instanceList){
+            Multiton.instanceList = [];
         }
-        if(Multiton.instance.length > 4){
+        if(Multiton.instanceList.length > 4){
             throw new Error("Max instance reach");
         }
-        Multiton.instance.push(this);
-        return Multiton.instance;
+        Multiton.instanceList.push(this);
+        return Multiton.instanceList;
     }
 }
 
