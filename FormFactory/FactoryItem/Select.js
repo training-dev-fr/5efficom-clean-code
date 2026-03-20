@@ -13,7 +13,7 @@ export default class Select extends Field{
             option.innerHTML = value;
             this.select.appendChild(option);
         }
-        return this.select;
+        return super.display(this.select);
     }
 
     onChange(callback){
